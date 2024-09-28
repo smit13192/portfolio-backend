@@ -4,7 +4,6 @@ import morgan from "morgan";
 import { PORT } from "./lib/core/config";
 import { ApiError } from "./lib/core/error/ApiError";
 import { Middleware } from "./lib/core/middleware/Middleware";
-import { limiter } from "./lib/core/middleware/RateLimitMiddleware";
 import router from "./lib/core/router";
 import { Log } from "./lib/core/utils/Log";
 import { connectDatabase } from "./lib/database";
@@ -18,8 +17,6 @@ function main() {
     app.use(cors());
 
     connectDatabase();
-
-    app.use(limiter);
 
     app.get('/', (_: Request, res: Response) => {
         return res.send("Server Start");

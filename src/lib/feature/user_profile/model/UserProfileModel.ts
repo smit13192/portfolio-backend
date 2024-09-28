@@ -10,7 +10,6 @@ interface IUserProfile {
     gitLink: string;
     linkedInLink: string;
     cv: string;
-    aboutMe: string;
     email: string;
     phoneNo: string;
     createdAt: Date;
@@ -52,10 +51,6 @@ const userProfileSchema = new Schema<IUserProfile>({
         required: true
     },
     cv: {
-        type: String,
-        required: true
-    },
-    aboutMe: {
         type: String,
         required: true
     },

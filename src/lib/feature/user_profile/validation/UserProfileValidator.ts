@@ -9,7 +9,6 @@ export const userProfile = Joi.object({
     instagramLink: Joi.string().required(),
     gitLink: Joi.string().required(),
     linkedInLink: Joi.string().required(),
-    aboutMe: Joi.string().required(),
     email: Joi.string().required(),
     phoneNo: Joi.string().required(),
 });
