@@ -2,7 +2,7 @@
   "name": "portfolio-backend",
   "version": "1.0.0",
   "scripts": {
-    "start": "tsc && node build/server.js",
+    "start": "node build/server.js",
     "build": "tsc",
     "dev": "tsc-watch --onSuccess \"npm start\""
   },
