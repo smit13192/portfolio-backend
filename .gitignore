@@ -1,0 +1,5 @@
+.env
+build/
+public/
+node_modules/
+*.lock
