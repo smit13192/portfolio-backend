@@ -6,11 +6,7 @@ class SkillController {
 
     async create(req: Request, res: Response, next: NextFunction) {
         try {
-            const image = (req as any).file?.path;
-            if (!image) {
-                throw new ApiError(400, 'Skill image is required');
-            }
-            const response = await skillService.create(req.body, image);
+            const response = await skillService.create(req.body);
             res.status(200).json(response);
         } catch (e) {
             return next(e);

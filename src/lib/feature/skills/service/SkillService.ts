@@ -9,10 +9,9 @@ interface ICreateSkill {
 
 export class SkillService {
 
-    async create(data: ICreateSkill, image: string): Promise<ApiResponse> {
+    async create(data: ICreateSkill): Promise<ApiResponse> {
         const findSkill = await SkillModel.findOne({ name: data.name });
         if (findSkill) {
-            deleteFile(image);
             throw new ApiError(400, 'The skill was found and is now available.');
         }
         const category = await SkillModel.create({
