@@ -7,4 +7,5 @@ export const createProject = Joi.object({
     technology: Joi.array<string>(),
     gitHubLink: Joi.string().allow(null, ''),
     liveLink: Joi.string().allow(null, ''),
+    index: Joi.number().required(),
 });

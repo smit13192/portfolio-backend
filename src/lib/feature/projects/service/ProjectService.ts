@@ -10,6 +10,7 @@ interface ICreateProject {
     technology: string[];
     gitHubLink?: string;
     liveLink?: string;
+    index: number;
 }
 
 export class ProjectService {
@@ -22,6 +23,7 @@ export class ProjectService {
             technology: data.technology,
             gitHubLink: data.gitHubLink,
             liveLink: data.liveLink,
+            index: data.index,
         });
 
         return new SuccessResponse({
@@ -36,7 +38,7 @@ export class ProjectService {
         if (projectId) {
             query['_id'] = projectId;
         }
-        const projects = await ProjectModel.find(query).sort({ 'updatedAt': 'desc' });
+        const projects = await ProjectModel.find(query).sort({ 'index': 'asc' });
         if (projectId && projects.length === 0) {
             throw new ApiError(400, 'The project was not found.');
         }
@@ -65,6 +67,7 @@ export class ProjectService {
             technology: data.technology || project.technology,
             gitHubLink: data.gitHubLink || project.gitHubLink,
             liveLink: data.liveLink || project.liveLink,
+            index: data.index || project.index,
         }, { new: true });
 
         return new SuccessResponse({

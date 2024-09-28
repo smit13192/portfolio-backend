@@ -7,6 +7,7 @@ interface IProject {
     technology: string[];
     gitHubLink?: string;
     liveLink?: string;
+    index: number;
     createdAt: Date;
     updatedAt: Date;
 }
@@ -37,6 +38,10 @@ const projectSchema = new Schema<IProject>({
         type: String,
         default: null,
     },
+    index: {
+        type: Number,
+        required: true,
+    }
 },
     { timestamps: true }
 );
