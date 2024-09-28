@@ -21,7 +21,7 @@ function main() {
 
     app.use(limiter);
 
-    app.use('/', (_: Request, res: Response) => {
+    app.get('/', (_: Request, res: Response) => {
         return res.send("Server Start");
     });
     app.use('/api/v1', router);
