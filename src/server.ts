@@ -1,5 +1,5 @@
 import cors from "cors";
-import express from "express";
+import express, { Request, Response } from "express";
 import morgan from "morgan";
 import { PORT } from "./lib/core/config";
 import { ApiError } from "./lib/core/error/ApiError";
@@ -21,6 +21,9 @@ function main() {
 
     app.use(limiter);
 
+    app.use('/', (_: Request, res: Response) => {
+        return res.send("Server Start");
+    });
     app.use('/api/v1', router);
     app.use('*', (_, __, next) => {
         next(new ApiError(404, 'Path not found. Please check the provided location.'));
