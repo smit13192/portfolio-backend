@@ -9,7 +9,6 @@ interface IUserProfile {
     instagramLink: string;
     gitLink: string;
     linkedInLink: string;
-    cv: string;
     email: string;
     phoneNo: string;
     createdAt: Date;
@@ -47,10 +46,6 @@ const userProfileSchema = new Schema<IUserProfile>({
         required: true
     },
     linkedInLink: {
-        type: String,
-        required: true
-    },
-    cv: {
         type: String,
         required: true
     },
