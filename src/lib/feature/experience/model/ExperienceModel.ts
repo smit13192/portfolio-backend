@@ -4,6 +4,7 @@ interface IExperience {
     title: string;
     address: string;
     description: string;
+    isWork: boolean;
     startDate: Date;
     endDate?: Date;
     isNow: boolean;
@@ -22,6 +23,10 @@ const experienceSchema = new Schema<IExperience>({
     },
     description: {
         type: String,
+        required: true
+    },
+    isWork: {
+        type: Boolean,
         required: true
     },
     startDate: {

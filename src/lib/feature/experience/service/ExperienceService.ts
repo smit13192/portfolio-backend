@@ -6,6 +6,7 @@ interface ICreateExperience {
     title: string;
     address: string;
     description: string;
+    isWork: boolean;
     startDate: string;
     endDate?: string;
     isNow?: boolean;
@@ -18,6 +19,7 @@ export class ExperienceService {
             title: data.title,
             address: data.address,
             description: data.description,
+            isWork: data.isWork,
             startDate: data.startDate,
             endDate: data.endDate,
             isNow: data.isNow
@@ -57,6 +59,7 @@ export class ExperienceService {
             title: data.title || experience.title,
             address: data.address || experience.address,
             description: data.description || experience.description,
+            isWork: data.isWork || experience.isWork,
             startDate: data.startDate || experience.startDate,
             endDate: data.endDate || experience.endDate,
             isNow: data.isNow || experience.isNow
