@@ -11,4 +11,5 @@ export const userProfile = Joi.object({
     linkedInLink: Joi.string().required(),
     email: Joi.string().required(),
     phoneNo: Joi.string().required(),
+    cv: Joi.string().required(),
 });

@@ -1,5 +1,4 @@
 import { ApiError } from "../../../core/error/ApiError";
-import { deleteFile } from "../../../core/middleware/Multer";
 import { ApiResponse, SuccessResponse } from "../../../core/response/Response";
 import SkillModel from "../model/SkillModel";
 
