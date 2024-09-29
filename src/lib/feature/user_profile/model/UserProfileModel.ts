@@ -11,6 +11,7 @@ interface IUserProfile {
     linkedInLink: string;
     email: string;
     phoneNo: string;
+    image: string;
     createdAt: Date;
     updatedAt: Date;
 }
@@ -54,6 +55,10 @@ const userProfileSchema = new Schema<IUserProfile>({
         required: true
     },
     phoneNo: {
+        type: String,
+        required: true
+    },
+    image: {
         type: String,
         required: true
     },
